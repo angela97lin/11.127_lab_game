@@ -4,37 +4,78 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+	public float targetTime = 10.0f;
 	private Animator animator;
+	public GameObject gameover;
+	public GameObject wingame;
+	public GameObject normalsetup;
+	public GameObject progressbar;
+	private bool leftOrRight  = false;
+	private float progress = 0;
+	private float lastCorrectTime = 0;
+	private bool endGame = false;
+	private float MAX_PROGRESS = 100;
 
 	// Use this for initialization
 	void Start()
 	{
 		animator = this.GetComponent<Animator>();
+		gameover.gameObject.SetActive (false);
+		wingame.gameObject.SetActive (false);
+		leftOrRight = false;
+		progress = 0;
+		lastCorrectTime = 0;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
-		var vertical = Input.GetAxis("Vertical");
-		var horizontal = Input.GetAxis("Horizontal");
-
-		if (vertical > 0)
-		{
-			animator.SetInteger("State", 1);
+		if (!endGame) {
+			if (Input.GetKeyUp (KeyCode.RightArrow)) {
+				if (leftOrRight) {
+					giveProgress ();
+				} else {
+					animator.SetInteger ("State", 0);
+				}
+			} else if (Input.GetKeyUp (KeyCode.LeftArrow)) {
+				if (!leftOrRight) {
+					giveProgress ();
+				} else {
+					animator.SetInteger ("State", 0);
+				}
+			}
+			if (lastCorrectTime - targetTime > 0.5f) {
+				animator.SetInteger ("State", 0);//if it's been too long since you did something correct
+			}
+			targetTime -= Time.deltaTime;
 		}
-		else if (vertical < 0)
+		GameObject.Find ("checkbox").transform.position = new Vector3 (-3.8f+progress*(9/MAX_PROGRESS), 4.5f, 0.9f);
+		if (targetTime <= 0.0f && !endGame)
 		{
-			animator.SetInteger("State", 2);
+			timerEnded();
+			endGame = true;
 		}
-		else if (horizontal > 0)
-		{
-			animator.SetInteger("State", 1);
-		}
-		else if (horizontal < 0)
-		{
-			animator.SetInteger("State", 0);
+		if (progress > MAX_PROGRESS && !endGame) {//got enough 
+			Debug.Log("WIN");
+			endGame = true;
+			this.gameObject.transform.position = new Vector3 (-4.24f,3.5f,0.0f);
+			animator.SetInteger ("State", 3);
+			wingame.gameObject.SetActive (true);
+			normalsetup.gameObject.SetActive (false);
 		}
 	}
+	void giveProgress()
+	{
+		leftOrRight = !leftOrRight;
+		animator.SetInteger ("State", 1);
+		progress++;
+		lastCorrectTime = targetTime;
+	}
+	void timerEnded()
+	{
+		animator.SetInteger ("State", 2);
+		gameover.gameObject.SetActive (true);
+		normalsetup.gameObject.SetActive (false);
+	}
+
 }
