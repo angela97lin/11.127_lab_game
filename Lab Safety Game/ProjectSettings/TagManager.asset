@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 141134055
+    locked: 0
+  - name: Foreground
+    uniqueID: 1129317559
+    locked: 0
+  - name: Splats
+    uniqueID: 3204457745
+    locked: 0
