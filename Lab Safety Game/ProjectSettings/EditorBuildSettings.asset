@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Dilute_Acid.unity
+    guid: afcffd7797ddb437bb97cb5f1f79c845
+  - enabled: 1
+    path: Assets/_Scenes/Bunsen.unity
+    guid: 0bdedcfce8b104edf8b035e694af3860
+  - enabled: 1
+    path: Assets/_Scenes/Eyes.unity
+    guid: d5e81a8eb522a43c1af9600de246b0e6
+  - enabled: 1
+    path: Assets/_Scenes/Main.unity
+    guid: 9064670af78914daeb61a4c50b14aade
