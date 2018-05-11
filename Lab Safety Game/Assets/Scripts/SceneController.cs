@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,13 +20,13 @@ public class SceneController : MonoBehaviour {
 			if (hit.collider != null) {
 				switch (hit.collider.gameObject.name) {
 				case "Bean":
-					SceneManager.LoadScene (2);
+					SceneManager.LoadScene ("Eyes");
 					break;
 				case "beaker":
-					SceneManager.LoadScene (0);
+					SceneManager.LoadScene ("Acid");
 					break;
 				case "BeanFile":
-					SceneManager.LoadScene (1);
+					SceneManager.LoadScene ("Bunsen");
 					break;
 				default:
 					break;
