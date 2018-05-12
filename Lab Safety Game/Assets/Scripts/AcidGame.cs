@@ -28,6 +28,7 @@ public class AcidGame : MonoBehaviour {
 	public GameObject check;
 	public GameObject fire;
 
+	public Image timerBar;
 
 	public List<GameObject> textList;
 	public enum Chemicals {sodium_hydroxide, calcium_hydroxide, ammonia, water, sulfuric_acid};
@@ -35,12 +36,14 @@ public class AcidGame : MonoBehaviour {
 	public List<Chemicals> userList;
 	public List<Chemicals> correctList;
 
-	public float targetTime = 10.0f;
-	 
+	public float maxTime;
+	public float timeLeft;
+
 
 	// Use this for initialization
 	void Start () {
-
+		timeLeft = 5f;
+		maxTime = 5f;
 		userList = new List<Chemicals> ();
 		correctList = new List<Chemicals> ();
 		correctList.Add (Chemicals.water);
@@ -75,12 +78,15 @@ public class AcidGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		targetTime -= Time.deltaTime;
-		print (targetTime);
-		if (targetTime <= 50.0f)
-		{
-			timerEnded();
+		if (timeLeft > 0) {
+			timeLeft -= Time.deltaTime;
+			print (timeLeft + " " + maxTime);
+			print (timeLeft / maxTime);
+			timerBar.fillAmount = timeLeft / maxTime;
+		} else {
+			timerEnded ();
 		}
+
 		if (Input.GetMouseButtonDown (0)) {
 			Vector2 origin = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
 				                 Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
