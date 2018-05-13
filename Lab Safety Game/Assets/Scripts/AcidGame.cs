@@ -24,7 +24,15 @@ public class AcidGame : MonoBehaviour {
 	public GameObject sulfuric_acid_text;
 	public GameObject instruction_text;
 	public GameObject win_text;
-	public GameObject lose_text;
+	public GameObject lose_sodium_hydroxide_text;
+	public GameObject lose_calcium_hydroxide_text;
+	public GameObject lose_ammonia_text;
+	public GameObject lose_too_many_text;
+	public GameObject lose_order_text;
+	public GameObject lose_time_text;
+
+	public GameObject lose_general_text;
+
 	public GameObject check;
 	public GameObject fire;
 
@@ -63,7 +71,14 @@ public class AcidGame : MonoBehaviour {
 			
 		instruction_text.gameObject.SetActive (true);
 		win_text.gameObject.SetActive (false);
-		lose_text.gameObject.SetActive (false);
+		lose_sodium_hydroxide_text.gameObject.SetActive (false);
+		lose_calcium_hydroxide_text.gameObject.SetActive (false);
+		lose_ammonia_text.gameObject.SetActive (false);
+		lose_too_many_text.gameObject.SetActive (false);
+		lose_order_text.gameObject.SetActive (false);
+		lose_time_text.gameObject.SetActive (false);
+		lose_general_text.gameObject.SetActive (false);
+
 		fire.gameObject.SetActive (false);
 
 
@@ -72,7 +87,7 @@ public class AcidGame : MonoBehaviour {
 	void timerEnded()
 	{
 		instruction_text.gameObject.SetActive (false);
-		lose_text.gameObject.SetActive (true);
+		lose_time_text.gameObject.SetActive (true);
 	}
 	
 	// Update is called once per frame
@@ -122,17 +137,25 @@ public class AcidGame : MonoBehaviour {
 						win_text.gameObject.SetActive (true);
 					} else {
 						instruction_text.gameObject.SetActive (false);
-						lose_text.gameObject.SetActive (true);
 
 						if (userList.Contains (Chemicals.water) && userList.Contains (Chemicals.sulfuric_acid)) {
 							int water_index = userList.IndexOf (Chemicals.water); 
 							int sa_index = userList.IndexOf (Chemicals.sulfuric_acid); 
 							if (sa_index < water_index) {
 								fire.gameObject.SetActive (true);
+								lose_order_text.gameObject.SetActive (true);
 							}
-
+						} else if (userList.Count > 2) {
+							lose_too_many_text.gameObject.SetActive (true);
+						} else if (userList.Contains (Chemicals.ammonia)) {
+							lose_ammonia_text.gameObject.SetActive (true);
+						} else if (userList.Contains (Chemicals.calcium_hydroxide)) {
+							lose_calcium_hydroxide_text.gameObject.SetActive (true);
+						} else if (userList.Contains (Chemicals.sodium_hydroxide)) {
+							lose_sodium_hydroxide_text.gameObject.SetActive (true);
+						} else {
+							lose_general_text.gameObject.SetActive (true);
 						}
-			
 					}
 				}
 			}
