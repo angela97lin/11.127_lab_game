@@ -44,12 +44,14 @@ public class AcidGame : MonoBehaviour {
 	public List<Chemicals> userList;
 	public List<Chemicals> correctList;
 
+	public bool timerOn;
 	public float maxTime;
 	public float timeLeft;
 
 
 	// Use this for initialization
 	void Start () {
+		timerOn = true;
 		timeLeft = 5f;
 		maxTime = 5f;
 		userList = new List<Chemicals> ();
@@ -78,9 +80,7 @@ public class AcidGame : MonoBehaviour {
 		lose_order_text.gameObject.SetActive (false);
 		lose_time_text.gameObject.SetActive (false);
 		lose_general_text.gameObject.SetActive (false);
-
 		fire.gameObject.SetActive (false);
-
 
 	}
 
@@ -89,19 +89,63 @@ public class AcidGame : MonoBehaviour {
 		instruction_text.gameObject.SetActive (false);
 		lose_time_text.gameObject.SetActive (true);
 	}
-	
+
+
+	void Check(){
+		closeOtherText ();
+		timerOn = false;
+		bool correct = userList.SequenceEqual (correctList);
+		if (correct) {
+			instruction_text.gameObject.SetActive (false);
+			win_text.gameObject.SetActive (true);
+		} else {
+			instruction_text.gameObject.SetActive (false);
+
+			if (userList.Contains (Chemicals.water) && userList.Contains (Chemicals.sulfuric_acid)) {
+				int water_index = userList.IndexOf (Chemicals.water); 
+				int sa_index = userList.IndexOf (Chemicals.sulfuric_acid); 
+				if (sa_index < water_index) {
+					fire.gameObject.SetActive (true);
+					lose_order_text.gameObject.SetActive (true);
+				}
+			} else if (userList.Count > 2) {
+				lose_too_many_text.gameObject.SetActive (true);
+			} else if (userList.Contains (Chemicals.ammonia)) {
+				lose_ammonia_text.gameObject.SetActive (true);
+			} else if (userList.Contains (Chemicals.calcium_hydroxide)) {
+				lose_calcium_hydroxide_text.gameObject.SetActive (true);
+			} else if (userList.Contains (Chemicals.sodium_hydroxide)) {
+				lose_sodium_hydroxide_text.gameObject.SetActive (true);
+			} else {
+				if (timeLeft == 0) {
+					timerEnded ();
+				} else {
+					lose_general_text.gameObject.SetActive (true);
+				}
+			}
+		}
+	}
+
+	void closeOtherText(){
+		water_text.gameObject.SetActive (false);
+		sulfuric_acid_text.gameObject.SetActive (false);
+		ammonia_text.gameObject.SetActive (false);
+		sodium_hydroxide_text.gameObject.SetActive (false);
+		calcium_hydroxide_text.gameObject.SetActive (false);
+	}
+
 	// Update is called once per frame
 	void Update () {
-
-		if (timeLeft > 0) {
-			timeLeft -= Time.deltaTime;
-			print (timeLeft + " " + maxTime);
-			print (timeLeft / maxTime);
-			timerBar.fillAmount = timeLeft / maxTime;
-		} else {
-			timerEnded ();
+		if (timerOn) {
+			if (timeLeft > 0) {
+				timeLeft -= Time.deltaTime;
+				print (timeLeft + " " + maxTime);
+				print (timeLeft / maxTime);
+				timerBar.fillAmount = timeLeft / maxTime;
+			} else {
+				Check ();
+			}
 		}
-
 		if (Input.GetMouseButtonDown (0)) {
 			Vector2 origin = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
 				                 Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
@@ -131,32 +175,7 @@ public class AcidGame : MonoBehaviour {
 					sodium_hydroxide_text.gameObject.SetActive (true);
 					userList.Add (Chemicals.sodium_hydroxide);
 				} else if (name.Equals ("check")) {
-					bool correct = userList.SequenceEqual (correctList);
-					if (correct) {
-						instruction_text.gameObject.SetActive (false);
-						win_text.gameObject.SetActive (true);
-					} else {
-						instruction_text.gameObject.SetActive (false);
-
-						if (userList.Contains (Chemicals.water) && userList.Contains (Chemicals.sulfuric_acid)) {
-							int water_index = userList.IndexOf (Chemicals.water); 
-							int sa_index = userList.IndexOf (Chemicals.sulfuric_acid); 
-							if (sa_index < water_index) {
-								fire.gameObject.SetActive (true);
-								lose_order_text.gameObject.SetActive (true);
-							}
-						} else if (userList.Count > 2) {
-							lose_too_many_text.gameObject.SetActive (true);
-						} else if (userList.Contains (Chemicals.ammonia)) {
-							lose_ammonia_text.gameObject.SetActive (true);
-						} else if (userList.Contains (Chemicals.calcium_hydroxide)) {
-							lose_calcium_hydroxide_text.gameObject.SetActive (true);
-						} else if (userList.Contains (Chemicals.sodium_hydroxide)) {
-							lose_sodium_hydroxide_text.gameObject.SetActive (true);
-						} else {
-							lose_general_text.gameObject.SetActive (true);
-						}
-					}
+					Check ();
 				}
 			}
 		}
