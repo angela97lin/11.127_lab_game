@@ -7,7 +7,7 @@ public class ColorChanger : MonoBehaviour {
 
 	private GameObject player;
 	private float duration;
-	private bool endgame;
+	//private bool endgame;
 
 	private float t = 0;
 	
@@ -17,15 +17,15 @@ public class ColorChanger : MonoBehaviour {
 	{
 		renderer = GetComponent<SpriteRenderer>();
 		player = GameObject.FindWithTag("Player");
-		duration = player.GetComponent<GoggleController>().duration;
-		endgame = player.GetComponent<GoggleController>().endgame;
+		duration = player.GetComponent<BeanController>().duration;
+		//endgame = player.GetComponent<BeanController>().endgame;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-			ChangeColor();
+		ChangeColor();
 	}
 
 	void ChangeColor() 
