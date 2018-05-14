@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="caitlingraphichappy.png">
+	<!-- Created with Adobe Animate version 18.0.1.115 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="beangraphicmove0000" x="0" y="0" width="366" height="272" frameX="0" frameY="-26" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0001" x="366" y="0" width="364" height="273" frameX="-2" frameY="-25" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0002" x="730" y="0" width="363" height="273" frameX="-3" frameY="-25" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0003" x="1093" y="0" width="361" height="275" frameX="-5" frameY="-23" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0004" x="1454" y="0" width="360" height="277" frameX="-6" frameY="-21" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0005" x="0" y="277" width="358" height="280" frameX="-8" frameY="-18" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0006" x="358" y="277" width="357" height="283" frameX="-9" frameY="-15" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0007" x="715" y="277" width="355" height="285" frameX="-11" frameY="-13" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0008" x="1070" y="277" width="354" height="288" frameX="-12" frameY="-10" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0009" x="1424" y="277" width="352" height="289" frameX="-14" frameY="-8" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0010" x="0" y="566" width="350" height="292" frameX="-16" frameY="-5" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0011" x="350" y="566" width="349" height="294" frameX="-17" frameY="-3" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0012" x="699" y="566" width="347" height="295" frameX="-19" frameY="-2" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0013" x="1046" y="566" width="345" height="297" frameX="-21" frameY="0" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0014" x="1391" y="566" width="348" height="295" frameX="-18" frameY="-3" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0015" x="0" y="863" width="350" height="292" frameX="-16" frameY="-6" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0016" x="350" y="863" width="352" height="289" frameX="-14" frameY="-9" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0017" x="702" y="863" width="354" height="286" frameX="-12" frameY="-12" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0018" x="1056" y="863" width="356" height="283" frameX="-10" frameY="-15" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0019" x="1412" y="863" width="358" height="280" frameX="-8" frameY="-18" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0020" x="0" y="1155" width="360" height="277" frameX="-6" frameY="-21" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0021" x="360" y="1155" width="362" height="273" frameX="-4" frameY="-25" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0022" x="722" y="1155" width="364" height="273" frameX="-2" frameY="-25" frameWidth="366" frameHeight="298"/>
+	<SubTexture name="beangraphicmove0023" x="0" y="0" width="366" height="272" frameX="0" frameY="-26" frameWidth="366" frameHeight="298"/>
+</TextureAtlas>

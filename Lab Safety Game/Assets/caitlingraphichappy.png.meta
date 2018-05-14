@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: 9c2fb96bcf0034506bf7a3fc8092ecc7
+timeCreated: 1526318516
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: beangraphicmove0000
+    21300002: beangraphicmove0001
+    21300004: beangraphicmove0002
+    21300006: beangraphicmove0003
+    21300008: beangraphicmove0004
+    21300010: beangraphicmove0005
+    21300012: beangraphicmove0006
+    21300014: beangraphicmove0007
+    21300016: beangraphicmove0008
+    21300018: beangraphicmove0009
+    21300020: beangraphicmove0010
+    21300022: beangraphicmove0011
+    21300024: beangraphicmove0012
+    21300026: beangraphicmove0013
+    21300028: beangraphicmove0014
+    21300030: beangraphicmove0015
+    21300032: beangraphicmove0016
+    21300034: beangraphicmove0017
+    21300036: beangraphicmove0018
+    21300038: beangraphicmove0019
+    21300040: beangraphicmove0020
+    21300042: beangraphicmove0021
+    21300044: beangraphicmove0022
+    21300046: beangraphicmove0023
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: beangraphicmove0000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1776
+        width: 366
+        height: 272
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0001
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1775
+        width: 364
+        height: 273
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0002
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1775
+        width: 363
+        height: 273
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0003
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1773
+        width: 361
+        height: 275
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0004
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 1771
+        width: 360
+        height: 277
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1491
+        width: 358
+        height: 280
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0006
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1488
+        width: 357
+        height: 283
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0007
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1486
+        width: 355
+        height: 285
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0008
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1483
+        width: 354
+        height: 288
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0009
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1482
+        width: 352
+        height: 289
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1190
+        width: 350
+        height: 292
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0011
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1188
+        width: 349
+        height: 294
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0012
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1187
+        width: 347
+        height: 295
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0013
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 1185
+        width: 345
+        height: 297
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0014
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 1187
+        width: 348
+        height: 295
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 893
+        width: 350
+        height: 292
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0016
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 896
+        width: 352
+        height: 289
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0017
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 899
+        width: 354
+        height: 286
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0018
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 902
+        width: 356
+        height: 283
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0019
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 905
+        width: 358
+        height: 280
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 360
+        height: 277
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0021
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 620
+        width: 362
+        height: 273
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0022
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 620
+        width: 364
+        height: 273
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: beangraphicmove0023
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1776
+        width: 366
+        height: 272
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

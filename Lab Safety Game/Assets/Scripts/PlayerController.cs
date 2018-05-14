@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
 	public GameObject normalsetup;
 	public GameObject progressbar;
 	private bool leftOrRight  = false;
+	private bool upOrDown  = false;
 	private float progress = 0;
 	private float lastCorrectTime = 0;
+	private float lastCorrectTimeShave = 0;
 	private bool endGame = false;
-	private float MAX_PROGRESS = 100;
+	private float MAX_PROGRESS = 80;
 
 	// Use this for initialization
 	void Start()
@@ -23,8 +25,10 @@ public class PlayerController : MonoBehaviour
 		gameover.gameObject.SetActive (false);
 		wingame.gameObject.SetActive (false);
 		leftOrRight = false;
+		upOrDown = false;
 		progress = 0;
 		lastCorrectTime = 0;
+		lastCorrectTimeShave = 0;
 	}
 
 	// Update is called once per frame
@@ -44,7 +48,20 @@ public class PlayerController : MonoBehaviour
 					animator.SetInteger ("State", 0);
 				}
 			}
-			if (lastCorrectTime - targetTime > 0.5f) {
+			if (Input.GetKeyUp (KeyCode.UpArrow)) {
+				if (upOrDown) {
+					giveProgressShave ();
+				} else {
+					animator.SetInteger ("State", 0);
+				}
+			} else if (Input.GetKeyUp (KeyCode.DownArrow)) {
+				if (!upOrDown) {
+					giveProgressShave ();
+				} else {
+					animator.SetInteger ("State", 0);
+				}
+			}
+			if (lastCorrectTime - targetTime > 0.5f && lastCorrectTimeShave - targetTime > 0.5f) {
 				animator.SetInteger ("State", 0);//if it's been too long since you did something correct
 			}
 			targetTime -= Time.deltaTime;
@@ -58,7 +75,7 @@ public class PlayerController : MonoBehaviour
 		if (progress > MAX_PROGRESS && !endGame) {//got enough 
 			Debug.Log("WIN");
 			endGame = true;
-			this.gameObject.transform.position = new Vector3 (-4.24f,3.5f,0.0f);
+			this.gameObject.transform.position = new Vector3 (-4.24f,3.5f,10.0f);
 			animator.SetInteger ("State", 3);
 			wingame.gameObject.SetActive (true);
 			normalsetup.gameObject.SetActive (false);
@@ -70,6 +87,12 @@ public class PlayerController : MonoBehaviour
 		animator.SetInteger ("State", 1);
 		progress++;
 		lastCorrectTime = targetTime;
+	}
+	void giveProgressShave()
+	{
+		upOrDown = !upOrDown;
+		animator.SetInteger ("State", 4);
+		lastCorrectTimeShave = targetTime;
 	}
 	void timerEnded()
 	{
