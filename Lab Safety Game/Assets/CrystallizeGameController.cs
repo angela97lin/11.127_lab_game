@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrystallizeGameController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CrystallizeGameController : MonoBehaviour
 	private Animator glassAnimator;
 	public GameObject gameover;
 	public GameObject gameovertooearly;
+	private float delay = 5f;
 
 	public GameObject wingame;
 	public GameObject normalsetup;
@@ -106,7 +108,7 @@ public class CrystallizeGameController : MonoBehaviour
 						smoke.gameObject.SetActive (false);
 						bubble.gameObject.SetActive (true);
 					} 
-				} else if(changedState == 1  && totalTime < timetoCrystallize / 10){
+				} else if (changedState == 1 && totalTime < timetoCrystallize / 10) {
 					Debug.Log ("H DEADI");
 					crystallizedState = true;
 					crystal.gameObject.SetActive (true);
@@ -118,9 +120,14 @@ public class CrystallizeGameController : MonoBehaviour
 					endGame = true;
 				}
 			}
+		} else {
+			delay -= Time.deltaTime;
+			if (delay < 0) {
+				SceneManager.LoadScene ("Main");
+			}
 		}
 
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && !endGame) {
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
