@@ -154,8 +154,8 @@ public class CrystallizeGameController : MonoBehaviour
 						} else {
 							Debug.Log ("WIN");
 							endGame = true;
-							this.gameObject.transform.position = new Vector3 (-4.24f, 3.5f, 0.0f);
-							animator.SetInteger ("State", 3);
+							this.gameObject.transform.position = new Vector3 (-6f, 4.72f, 10.0f);
+							animator.SetInteger ("State", 5);
 							wingame.gameObject.SetActive (true);
 							normalsetup.gameObject.SetActive (false);
 						}
