@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 			delay -= Time.deltaTime;
 			if (delay < 0) {
 				if (winGame) {
-					SceneManager.LoadScene ("Cutscene2");
+					SceneManager.LoadScene ("Eyes");
 				} else {
 					Manager.Instance.deaths++;
 					Debug.Log (Manager.Instance.deaths);

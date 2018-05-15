@@ -10,6 +10,7 @@ public class BeanController : MonoBehaviour {
     public Text endText;
 	public Text instructionText;
 	public GameObject splats;
+	private bool gameOver = false;
 
     private float time;
 	//public bool endgame;
@@ -28,16 +29,16 @@ public class BeanController : MonoBehaviour {
     void Update ()
     {
 		
-        if (time >= duration) 
-		{
-			if (importantItems == 3)
-        	{
-            	win = true;	
-        	}
-			EndGame(win);
-		}
+		if (time >= duration && !gameOver) {
+			if (importantItems == 1) {
+				win = true;	
+			}
+			gameOver = true;
 
-        
+		} else if (time >= duration) {
+			EndGame (win);
+		}
+			
 
 		time += Time.deltaTime;
     }
@@ -49,13 +50,20 @@ public class BeanController : MonoBehaviour {
 		if (win) 
 		{
 			endText.text = "Great Job! You win!";
-			SceneManager.LoadScene("Cutscene2");
+			if (time >= duration + 5f) {
+				SceneManager.LoadScene("Cutscene2");
+			}
+
 		}
 		else 
 		{
-			Manager.Instance.deaths++;
+			
 			endText.text = "Proper equipment is very important for safety!";
-			SceneManager.LoadScene("Eyes");
+			if (time >= duration + 5f) {
+				Manager.Instance.deaths++;
+				SceneManager.LoadScene("Eyes");
+			}
+
 		}
 	}
 }

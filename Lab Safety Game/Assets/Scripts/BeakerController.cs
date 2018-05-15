@@ -20,6 +20,7 @@ public class BeakerController : MonoBehaviour {
     private Vector3 finalPostition;
     private Vector3 startPosition;
     private float time;
+	public bool gameOver = false;
 
     void Start() 
     {
@@ -47,11 +48,13 @@ public class BeakerController : MonoBehaviour {
       		transform.position = objPosition;
 		}
 
-        if (time >= duration) 
-		{
-			if (inHood){
-                win = true;
-            }
+		if (time >= duration && !gameOver) {
+			if (inHood) {
+				win = true;
+			}
+			gameOver = true;
+
+		} else if (gameOver) {
 			EndGame(win);
 		}
     }
@@ -62,13 +65,18 @@ public class BeakerController : MonoBehaviour {
 		if (win) 
 		{
 			endText.text = "Great Job! You win!";
-            SceneManager.LoadScene("Crystallize");
+			if (time >= duration + 5f) {
+				SceneManager.LoadScene ("Crystallize");
+			}
 		}
 		else 
 		{
-            Manager.Instance.deaths++;
+           
 			endText.text = "You suffocated! Fumes are very dangerous!";
-            SceneManager.LoadScene("Fumes");
+			if (time >= duration + 5f) {
+				Manager.Instance.deaths++;
+				SceneManager.LoadScene ("Fumes");
+			}
 		}
 	}
 
