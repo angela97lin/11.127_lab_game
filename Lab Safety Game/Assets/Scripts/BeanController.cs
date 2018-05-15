@@ -26,19 +26,17 @@ public class BeanController : MonoBehaviour {
 
     void Update ()
     {
-		Debug.Log(importantItems);
+		
         if (time >= duration) 
 		{
-			//endgame = true;
+			if (importantItems == 3)
+        	{
+            	win = true;	
+        	}
 			EndGame(win);
 		}
 
-        if (importantItems == 3)
-        {
-            win = true;
-            //engame = true;
-            EndGame(win);
-        }
+        
 
 		time += Time.deltaTime;
     }
