@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Cutscene4.unity
     guid: 365519b601591452b8dd69a86fba9ae6
+  - enabled: 1
+    path: Assets/_Scenes/Teacher.unity
+    guid: c3f6e9f09b1ce4fdfb1e43cc1e8ed2b1

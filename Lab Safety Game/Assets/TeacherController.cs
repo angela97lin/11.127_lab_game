@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneController : MonoBehaviour {
+public class TeacherController : MonoBehaviour {
 
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {	
 		if (Input.GetMouseButtonDown(0)) {
@@ -17,15 +17,9 @@ public class SceneController : MonoBehaviour {
 			Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
 			RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-			if (hit.collider != null) {
-				switch (hit.collider.gameObject.name) {
 
-				case "bg":
-					SceneManager.LoadScene ("Teacher");
-					break;
-				default:
-					break;
-				}
+			if (hit.collider != null) {
+				SceneManager.LoadScene ("Cutscene");
 
 			}
 		}

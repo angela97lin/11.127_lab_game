@@ -58,21 +58,15 @@ public class Cutscene2Controller : MonoBehaviour {
 
 			RaycastHit2D hit = Physics2D.Raycast (mousePos2D, Vector2.zero);
 			if (hit.collider != null) {
-				switch (hit.collider.gameObject.name) {
-				case "continue":
-					if (index < quotes.Count - 1) {
-						index++;
-						GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
-						GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
-						toggleCutscene ();
-					} else {
-						SceneManager.LoadScene ("Crystallize");
-					} 
-					break;
-
-				default:
-					break;
-				}
+				if (index < quotes.Count - 1) {
+					index++;
+					GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
+					GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
+					toggleCutscene ();
+				} else {
+					SceneManager.LoadScene ("Crystallize");
+				} 
+				
 
 			}
 		}

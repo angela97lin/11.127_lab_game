@@ -10,7 +10,7 @@ public class Cutscene4Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		fadeStart ();
-		quotes.Add ("Caitlin: We did it! \nGood thing I learned a couple things along the way, \nI can probably thank Eric for that!\n Score:" + Manager.Instance.deaths);
+		quotes.Add ("Caitlin: We did it! \nGood thing I learned a couple things along the way, \nI can probably thank Eric for that!\n Deaths:" + Manager.Instance.deaths);
 
 		GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
 		cutscenes.Add (GameObject.Find ("cutscene12"));
@@ -40,21 +40,15 @@ public class Cutscene4Controller : MonoBehaviour {
 
 			RaycastHit2D hit = Physics2D.Raycast (mousePos2D, Vector2.zero);
 			if (hit.collider != null) {
-				switch (hit.collider.gameObject.name) {
-				case "continue":
-					if (index < quotes.Count - 1) {
-						index++;
-						GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
-						GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
-						toggleCutscene ();
-					} else {
-						SceneManager.LoadScene ("Main");
-					} 
-					break;
+				if (index < quotes.Count - 1) {
+					index++;
+					GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
+					GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
+					toggleCutscene ();
+				} else {
+					SceneManager.LoadScene ("Main");
+				} 
 
-				default:
-					break;
-				}
 
 			}
 		}

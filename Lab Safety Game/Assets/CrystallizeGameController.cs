@@ -126,7 +126,7 @@ public class CrystallizeGameController : MonoBehaviour
 			delay -= Time.deltaTime;
 			if (delay < 0) {
 				if (winGame) {
-					SceneManager.LoadScene ("Cutscene3");
+					SceneManager.LoadScene ("Cutscene4");
 				} else {
 					Manager.Instance.deaths++;
 					Debug.Log (Manager.Instance.deaths);
