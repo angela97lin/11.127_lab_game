@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/Main.unity
+    guid: 9064670af78914daeb61a4c50b14aade
+  - enabled: 1
     path: Assets/_Scenes/Acid.unity
     guid: afcffd7797ddb437bb97cb5f1f79c845
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Bunsen.unity
     guid: 0bdedcfce8b104edf8b035e694af3860
-  - enabled: 1
-    path: Assets/_Scenes/Main.unity
-    guid: 9064670af78914daeb61a4c50b14aade
   - enabled: 1
     path: Assets/_Scenes/Crystallize.unity
     guid: 1f58a3fed011a4ffea92e9e6d75b32b7
@@ -38,3 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Loading.unity
     guid: f6d26cff9733a456c864b86f8c5e7c1c
+  - enabled: 1
+    path: Assets/_Scenes/MetalSetup.unity
+    guid: 3db503b2cbea847739f77430d105fdab
+  - enabled: 1
+    path: Assets/_Scenes/Fumes.unity
+    guid: af894743884bf4696b044b5edb70ea25
+  m_configObjects: {}
