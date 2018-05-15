@@ -400,8 +400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -55.5, y: -32.1}
+  m_SizeDelta: {x: 167.8, y: 64.67}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &721865325
 MonoBehaviour:
@@ -583,6 +583,7 @@ MonoBehaviour:
   zinc: 0
   target: 0
   active: 0
+  gameOver: 0
 --- !u!199 &829408506
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -697,7 +698,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 294996538
+  randomSeed: 477928861
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4273,7 +4274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9.980011, y: -5.4900055}
+  m_AnchoredPosition: {x: -9.980011, y: -5.48999}
   m_SizeDelta: {x: 160, y: 68.4}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1505625098
@@ -4312,7 +4313,7 @@ MonoBehaviour:
 
     Place half of the Zinc into
 
-    the acid.'
+    the acid and don''t inhale the fumes!'
 --- !u!222 &1505625099
 CanvasRenderer:
   m_ObjectHideFlags: 0
