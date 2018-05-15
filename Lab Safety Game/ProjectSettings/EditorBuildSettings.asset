@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Teacher.unity
     guid: c3f6e9f09b1ce4fdfb1e43cc1e8ed2b1
+  - enabled: 1
+    path: Assets/_Scenes/Loading.unity
+    guid: f6d26cff9733a456c864b86f8c5e7c1c
