@@ -20,6 +20,8 @@ public class CrystallizeGameController : MonoBehaviour
 	public GameObject crystal;
 	public GameObject bubble;
 
+	private bool winGame = false;
+
 	private bool endGame = false;
 	private string phase = "glass";
 	private bool crystallizedState = false;
@@ -123,7 +125,13 @@ public class CrystallizeGameController : MonoBehaviour
 		} else {
 			delay -= Time.deltaTime;
 			if (delay < 0) {
-				SceneManager.LoadScene ("Main");
+				if (winGame) {
+					SceneManager.LoadScene ("Cutscene4");
+				} else {
+					Manager.Instance.deaths++;
+					Debug.Log (Manager.Instance.deaths);
+					SceneManager.LoadScene ("Crystallize");
+				}
 			}
 		}
 
@@ -153,6 +161,7 @@ public class CrystallizeGameController : MonoBehaviour
 							endGame = true;
 						} else {
 							Debug.Log ("WIN");
+							winGame = true;
 							endGame = true;
 							this.gameObject.transform.position = new Vector3 (-6f, 4.72f, 10.0f);
 							animator.SetInteger ("State", 5);
