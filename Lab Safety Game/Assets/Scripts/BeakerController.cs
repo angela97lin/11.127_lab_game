@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BeakerController : MonoBehaviour {
     public float duration;
@@ -61,10 +62,13 @@ public class BeakerController : MonoBehaviour {
 		if (win) 
 		{
 			endText.text = "Great Job! You win!";
+            SceneManager.LoadScene("Crystallize");
 		}
 		else 
 		{
-			endText.text = "You suffocated! Fumes are be very dangerous!";
+            Manager.Instance.deaths++;
+			endText.text = "You suffocated! Fumes are very dangerous!";
+            SceneManager.LoadScene("Fumes");
 		}
 	}
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BeanController : MonoBehaviour {
     
@@ -48,10 +49,13 @@ public class BeanController : MonoBehaviour {
 		if (win) 
 		{
 			endText.text = "Great Job! You win!";
+			SceneManager.LoadScene("Cutscene2");
 		}
 		else 
 		{
-			endText.text = "Eye wear is very important for eye safety!";
+			Manager.Instance.deaths++;
+			endText.text = "Proper equipment is very important for safety!";
+			SceneManager.LoadScene("Eyes");
 		}
 	}
 }
