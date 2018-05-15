@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AcidGame : MonoBehaviour {
 
@@ -32,6 +33,7 @@ public class AcidGame : MonoBehaviour {
 	public GameObject lose_time_text;
 
 	public GameObject lose_general_text;
+	public GameObject restart_text;
 
 	public GameObject check;
 	public GameObject fire;
@@ -47,6 +49,10 @@ public class AcidGame : MonoBehaviour {
 	public bool timerOn;
 	public float maxTime;
 	public float timeLeft;
+
+
+	public bool gameEnded;
+	public bool won;
 
 
 	// Use this for initialization
@@ -81,7 +87,16 @@ public class AcidGame : MonoBehaviour {
 		lose_time_text.gameObject.SetActive (false);
 		lose_general_text.gameObject.SetActive (false);
 		fire.gameObject.SetActive (false);
+		restart_text.gameObject.SetActive (false);
 
+	}
+
+
+	void restartTimer(){
+		gameEnded = true;
+		timerOn = true;
+		timeLeft = 5f;
+		maxTime = 5f;
 	}
 
 	void timerEnded()
@@ -98,9 +113,13 @@ public class AcidGame : MonoBehaviour {
 		if (correct) {
 			instruction_text.gameObject.SetActive (false);
 			win_text.gameObject.SetActive (true);
+			restartTimer ();
+			won = true;
 		} else {
 			instruction_text.gameObject.SetActive (false);
 			Manager.Instance.deaths++;
+			restartTimer ();
+			restart_text.gameObject.SetActive (true);
 
 			if (userList.Contains (Chemicals.water) && userList.Contains (Chemicals.sulfuric_acid)) {
 				int water_index = userList.IndexOf (Chemicals.water); 
@@ -137,47 +156,67 @@ public class AcidGame : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (timerOn) {
-			if (timeLeft > 0) {
-				timeLeft -= Time.deltaTime;
-				print (timeLeft + " " + maxTime);
-				print (timeLeft / maxTime);
-				timerBar.fillAmount = timeLeft / maxTime;
-			} else {
-				Check ();
-			}
-		}
-		if (Input.GetMouseButtonDown (0)) {
-			Vector2 origin = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
-				                 Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
-			RaycastHit2D hit = Physics2D.Raycast (origin, Vector2.zero, 0f);
-			if (hit) {
-				print (hit.transform.gameObject.name);
-				string name = hit.transform.gameObject.name;
-				foreach (GameObject g in textList) {
-					g.gameObject.SetActive (false);
+		if (gameEnded) {
+			if (won) {
+				if (timeLeft > 0) {
+					print (timeLeft);
+					timeLeft -= Time.deltaTime;
+					timerBar.fillAmount = timeLeft / maxTime;
+				} else {
+					SceneManager.LoadScene ("Cutscene3");
 				}
-				if (name.Equals ("water")) {
-					water_text.gameObject.SetActive (true);
-					userList.Add (Chemicals.water);
-				} else if (name.Equals ("h2so4")) {
-					sulfuric_acid_text.gameObject.SetActive (true);
-					userList.Add (Chemicals.sulfuric_acid);
-
-				} else if (name.Equals ("nh4oh")) {
-					ammonia_text.gameObject.SetActive (true);
-					userList.Add (Chemicals.ammonia);
-
-				} else if (name.Equals ("caoh2")) {
-					calcium_hydroxide_text.gameObject.SetActive (true);
-					userList.Add (Chemicals.calcium_hydroxide);
-
-				} else if (name.Equals ("naoh")) {
-					sodium_hydroxide_text.gameObject.SetActive (true);
-					userList.Add (Chemicals.sodium_hydroxide);
-
-				} else if (name.Equals ("check")) {
+			} else {
+				if (timeLeft > 0) {
+					print (timeLeft);
+					timeLeft -= Time.deltaTime;
+					timerBar.fillAmount = timeLeft / maxTime;
+				} else {
+					SceneManager.LoadScene ("Acid");
+				}
+			}
+		} else {
+			if (timerOn) {
+				if (timeLeft > 0) {
+					timeLeft -= Time.deltaTime;
+					print (timeLeft + " " + maxTime);
+					print (timeLeft / maxTime);
+					timerBar.fillAmount = timeLeft / maxTime;
+				} else {
 					Check ();
+				}
+			}
+			if (Input.GetMouseButtonDown (0)) {
+				Vector2 origin = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x,
+					                Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
+				RaycastHit2D hit = Physics2D.Raycast (origin, Vector2.zero, 0f);
+				if (hit) {
+					print (hit.transform.gameObject.name);
+					string name = hit.transform.gameObject.name;
+					foreach (GameObject g in textList) {
+						g.gameObject.SetActive (false);
+					}
+					if (name.Equals ("water")) {
+						water_text.gameObject.SetActive (true);
+						userList.Add (Chemicals.water);
+					} else if (name.Equals ("h2so4")) {
+						sulfuric_acid_text.gameObject.SetActive (true);
+						userList.Add (Chemicals.sulfuric_acid);
+
+					} else if (name.Equals ("nh4oh")) {
+						ammonia_text.gameObject.SetActive (true);
+						userList.Add (Chemicals.ammonia);
+
+					} else if (name.Equals ("caoh2")) {
+						calcium_hydroxide_text.gameObject.SetActive (true);
+						userList.Add (Chemicals.calcium_hydroxide);
+
+					} else if (name.Equals ("naoh")) {
+						sodium_hydroxide_text.gameObject.SetActive (true);
+						userList.Add (Chemicals.sodium_hydroxide);
+
+					} else if (name.Equals ("check")) {
+						Check ();
+					}
 				}
 			}
 		}
