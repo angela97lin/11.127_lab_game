@@ -1,20 +1,20 @@
 WebGL
 PlayerPath?
-/Users/ange/Desktop/lab
+/Users/ange/Desktop/11.127_lab_game/Lab Safety Game/lab
 SceneListBegin?
 Assets/_Scenes/Main.unity
 Assets/_Scenes/Acid.unity
-Assets/_Scenes/Eyes.unity
 Assets/_Scenes/Bunsen.unity
 Assets/_Scenes/Crystallize.unity
 Assets/_Scenes/Cutscene.unity
 Assets/_Scenes/Cutscene2.unity
 Assets/_Scenes/Cutscene3.unity
 Assets/_Scenes/Cutscene4.unity
-Assets/_Scenes/Teacher.unity
+Assets/_Scenes/Eyes.unity
+Assets/_Scenes/Fumes.unity
 Assets/_Scenes/Loading.unity
 Assets/_Scenes/MetalSetup.unity
-Assets/_Scenes/Fumes.unity
+Assets/_Scenes/Teacher.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -148,7 +148,7 @@ e3706233b724a93931528ed31cf39870 Assembly-CSharp.dll:.Manager
 4df86f437a61b08c14fd0adff88ddf71 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ActivateTrigger
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 fe76270bd84ec3b6f2f6f92c69cf69da Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
-f2a2f12151d2f99fd32d75d005709bba Assembly-CSharp.dll:.BeakerController
+8c56f05f254aab447df376cf9f317f1a Assembly-CSharp.dll:.BeakerController
 a7d3c6c6948d99dd4116e659ddcf5ac4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 34a8fdf784a0c43f1bd142a8a3cd2809 Assembly-CSharp.dll:.CrystallizeGameController
 97fad6876fd8bbd73ad2849c651a3f62 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.FirstPerson.HeadBob
