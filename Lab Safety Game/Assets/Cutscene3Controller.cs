@@ -46,7 +46,7 @@ public class Cutscene3Controller : MonoBehaviour {
 					GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
 					toggleCutscene ();
 				} else {
-					SceneManager.LoadScene ("Crystallize");
+					SceneManager.LoadScene ("Fumes");
 				} 
 				
 
