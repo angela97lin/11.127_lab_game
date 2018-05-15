@@ -19,7 +19,7 @@ public class TeacherController : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
 			if (hit.collider != null) {
-				SceneManager.LoadScene ("Cutscene");
+				SceneManager.LoadScene ("Loading");
 
 			}
 		}
