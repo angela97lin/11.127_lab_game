@@ -55,13 +55,17 @@ public class MetalSetup : MonoBehaviour {
 		} else if (chosenMetal == Metal.iron) {
 			lose_iron.gameObject.SetActive (true);
 			fire.gameObject.SetActive (true);
+			Manager.Instance.deaths++;
 
 		} else if (chosenMetal == Metal.copper) {
 			lose_copper.gameObject.SetActive (true);
 			fire.gameObject.SetActive (true);
+			Manager.Instance.deaths++;
+
 		} else if (chosenMetal == Metal.magnesium) {
 			lose_magnesium.gameObject.SetActive (true);
 			fire.gameObject.SetActive (true);
+			Manager.Instance.deaths++;
 
 		}
 	}

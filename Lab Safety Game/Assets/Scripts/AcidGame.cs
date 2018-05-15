@@ -100,6 +100,7 @@ public class AcidGame : MonoBehaviour {
 			win_text.gameObject.SetActive (true);
 		} else {
 			instruction_text.gameObject.SetActive (false);
+			Manager.Instance.deaths++;
 
 			if (userList.Contains (Chemicals.water) && userList.Contains (Chemicals.sulfuric_acid)) {
 				int water_index = userList.IndexOf (Chemicals.water); 
@@ -174,6 +175,7 @@ public class AcidGame : MonoBehaviour {
 				} else if (name.Equals ("naoh")) {
 					sodium_hydroxide_text.gameObject.SetActive (true);
 					userList.Add (Chemicals.sodium_hydroxide);
+
 				} else if (name.Equals ("check")) {
 					Check ();
 				}
