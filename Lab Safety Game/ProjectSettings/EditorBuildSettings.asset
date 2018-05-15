@@ -41,3 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MetalSetup.unity
     guid: 3db503b2cbea847739f77430d105fdab
+  - enabled: 1
+    path: Assets/_Scenes/Fumes.unity
+    guid: af894743884bf4696b044b5edb70ea25
