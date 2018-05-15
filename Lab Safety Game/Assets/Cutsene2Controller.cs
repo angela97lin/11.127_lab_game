@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
-
 
 public class Cutscene2Controller : MonoBehaviour {
 	private int index = 0;
@@ -21,7 +18,7 @@ public class Cutscene2Controller : MonoBehaviour {
 		quotes.Add ("CRASH!!!");
 		quotes.Add ("Eric: Huh? Did the poison just...");
 		quotes.Add ("Eric: BLehawefjalwkjeflajwefja;wf..duhhh....");
-		quotes.Add ("Caitlin: No, Eric! Looks like he forgot a key lab safety principle...\nhow fitting. What am I supposed to do?");
+		quotes.Add ("Caitlin: No, Eric! Looks like he forgot a key lab safety principle \nof wearing safety goggles...how fitting. What am I supposed to do?");
 		quotes.Add ("I guess I’ve got no choice but to follow what this book \nsays and continue with the cure. \n\n");
 
 		GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
@@ -69,7 +66,7 @@ public class Cutscene2Controller : MonoBehaviour {
 						GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
 						toggleCutscene ();
 					} else {
-						SceneManager.LoadScene ("Main");
+						SceneManager.LoadScene ("Crystallize");
 					} 
 					break;
 

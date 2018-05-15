@@ -3,28 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class CutsceneController : MonoBehaviour {
+public class Cutscene4Controller : MonoBehaviour {
 	private int index = 0;
 	private List<string> quotes = new List<string>();
 	private List<GameObject> cutscenes = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 		fadeStart ();
-		quotes.Add ("Caitlin: Hey Eric! Whatcha doing? \n");
-		quotes.Add ("Eric: Hey Caitlin, so the news says that there’s some sort of outbreak...\nit’s making people do dumb things…And supposedly, they die from it!");
-		quotes.Add ("Eric: I’m going to lab to to see if I can make a cure. \nIf you’ve got the time, why not come?");
-		quotes.Add ("Caitlin: Oh no! I didn’t know we needed \nan outbreak for that to happen! We’ve got to hurry!\n");
-		quotes.Add ("Caitlin: I haven’t been in here in forever, \nEric, are you sure this is a good idea?\n");
-		quotes.Add ("Eric: No worries Caitlin, I’ll show you how it’s done. \nI actually read about this cure in this book \nI read a while back, but we’re going to need to prep some materials first. \nIt’s going to be dangerous, so try not to do too many dumb things, okay? \nI’ll give you some guidance!\n");
+		quotes.Add ("Caitlin: We did it! \nGood thing I learned a couple things along the way, \nI can probably thank Eric for that!\n Score:" + Manager.Instance.deaths);
 
 		GameObject.Find ("textMsg").GetComponent<TextMesh> ().text = quotes [index];
-		cutscenes.Add (GameObject.Find ("cutscene1"));
-		cutscenes.Add (GameObject.Find ("cutscene1"));
-		cutscenes.Add (GameObject.Find ("cutscene1"));
-		cutscenes.Add (GameObject.Find ("cutscene1"));
-		cutscenes.Add (GameObject.Find ("cutscene2"));
-		cutscenes.Add (GameObject.Find ("cutscene2"));
+		cutscenes.Add (GameObject.Find ("cutscene12"));
 		toggleCutscene ();
 	}
 	void toggleCutscene()
@@ -38,7 +27,7 @@ public class CutsceneController : MonoBehaviour {
 	{
 		GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		//fades out the scene
@@ -59,10 +48,10 @@ public class CutsceneController : MonoBehaviour {
 						GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
 						toggleCutscene ();
 					} else {
-						SceneManager.LoadScene ("Bunsen");
+						SceneManager.LoadScene ("Main");
 					} 
 					break;
-				
+
 				default:
 					break;
 				}

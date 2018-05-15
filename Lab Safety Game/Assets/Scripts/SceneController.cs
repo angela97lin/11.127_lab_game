@@ -28,6 +28,9 @@ public class SceneController : MonoBehaviour {
 				case "BeanFile":
 					SceneManager.LoadScene ("Bunsen");
 					break;
+				case "bg":
+					SceneManager.LoadScene ("Cutscene");
+					break;
 				default:
 					break;
 				}

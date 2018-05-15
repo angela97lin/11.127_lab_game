@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using System.Collections.Generic;
-
 
 public class Cutscene3Controller : MonoBehaviour {
 	private int index = 0;
@@ -51,7 +48,7 @@ public class Cutscene3Controller : MonoBehaviour {
 						GameObject.Find ("fader").GetComponent<SpriteRenderer> ().color = new Color(0,0,0,1f);
 						toggleCutscene ();
 					} else {
-						SceneManager.LoadScene ("Main");
+						SceneManager.LoadScene ("Crystallize");
 					} 
 					break;
 

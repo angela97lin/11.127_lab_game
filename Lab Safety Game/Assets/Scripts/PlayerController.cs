@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class PlayerController : MonoBehaviour
 	private float lastCorrectTime = 0;
 	private float lastCorrectTimeShave = 0;
 	private bool endGame = false;
+	private bool winGame = false;
 	private float MAX_PROGRESS = 80;
+	private float delay = 5f;
 
 	// Use this for initialization
 	void Start()
@@ -65,6 +68,17 @@ public class PlayerController : MonoBehaviour
 				animator.SetInteger ("State", 0);//if it's been too long since you did something correct
 			}
 			targetTime -= Time.deltaTime;
+		} else {
+			delay -= Time.deltaTime;
+			if (delay < 0) {
+				if (winGame) {
+					SceneManager.LoadScene ("Cutscene2");
+				} else {
+					Manager.Instance.deaths++;
+					Debug.Log (Manager.Instance.deaths);
+					SceneManager.LoadScene ("Bunsen");
+				}
+			}
 		}
 		GameObject.Find ("checkbox").transform.position = new Vector3 (-3.8f+progress*(9/MAX_PROGRESS), 4.5f, 0.9f);
 		if (targetTime <= 0.0f && !endGame)
@@ -74,6 +88,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (progress > MAX_PROGRESS && !endGame) {//got enough 
 			Debug.Log("WIN");
+			winGame = true;
 			endGame = true;
 			this.gameObject.transform.position = new Vector3 (-4.24f,3.5f,10.0f);
 			animator.SetInteger ("State", 3);
